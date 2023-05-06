@@ -17,8 +17,8 @@ int main(void)
         GPS_read();
         GPR_format();
         if(flag==1){
-            latitude2=currentLat;
-            longitude2=currentLong;
+            endLat=currentLat;
+            endLong=currentLong;
                  }
                                                        //distance+=calculateDistance( latitude1, longitude1, latitude2, longitude2)
         split_dist(distance);
