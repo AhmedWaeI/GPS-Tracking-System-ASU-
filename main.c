@@ -9,11 +9,12 @@ int main(void)
      initPortB();
      initPortF();
      UART1_7seg_init();
+     UART0_GPS_init();
     while(1)
          {
 
         GPS_read();
-
+        GPR_format();
         if(flag==1){
             latitude2=latitude1;
             longitude2=longitude1;
