@@ -26,7 +26,7 @@ void sys_tick_int(void){
 	NVTC_ST_CTRL =0;
 	NVTC_ST_RELOAD_R=400000;  // as our clk is 80MHZ 
   NVTC_ST_CURRENT_R=0;
-  NVTC_ST_CTRL =0X7;
+  NVTC_ST_CTRL_R =0X7;
 	_enable_irq();
 }
 void sys_tick_Handler(void){
