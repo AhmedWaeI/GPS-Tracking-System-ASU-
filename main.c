@@ -4,7 +4,7 @@
 #include "GPIO.h"
 int main(void)
 {
-     Sys_tick_Init();
+     sys_tick_int();
      initPortE();
      initPortB();
      initPortF();
