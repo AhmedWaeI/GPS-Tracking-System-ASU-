@@ -24,7 +24,7 @@ int main(void)
         split_dist(distance);
 
         if(speed>0.8){
-            distance+=getDistance(latitude1,longitude1,latitude2,longitude2);
+            distance+=getDistance(currentLat,currentLong,endLat,endLong);
                 }
 
         if(!(GPIO_PORTF_DATA_R & 0x10)&&distance>=100){ //turn on the led if the push button on pf4 pressed and the distance more than 100
@@ -34,8 +34,8 @@ int main(void)
          }
            }
         flag=0;
-        latitude2=latitude1;
-        longitude2=longitude1;
+         endLat=currentLat;
+            endLong=currentLong;
 
     }
 }
