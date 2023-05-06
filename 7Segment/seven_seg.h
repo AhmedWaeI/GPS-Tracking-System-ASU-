@@ -1,3 +1,5 @@
+#ifndef SEVEN_SEG.H
+#define SEVEN_SEG.H
 //function to divide distance to be displayed on the 3 7_segment_displays
 void split_dist(double distance);
 
@@ -14,3 +16,4 @@ void sys_tick_int(void);
 
 //function to cycle through the 3 digits to display a changing value on the 7_segment_displays at equal intervals
 void sys_tick_Handler(void);
+#endif
