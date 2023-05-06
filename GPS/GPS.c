@@ -27,7 +27,7 @@ float getDistance (float startLong, float startLat,float endLong,float endLat){
 	float  phi_A= toRad (toDeg (startLat) ) ;
 	float lamda_B = toRad (toDeg (endLong) ) ;
 	float  phi_B= toRad (toDeg (endLat) ) ;
-	float a = pow (sin ((phi_B-phi_A)/2), 2) +cos (phi_A) *cos (phi_B)*pow (sin ((lamda_B-lamda_B)/2),2); // Haversine formula: a = sin' (dp/2) + cos p1 O cos p2 D sin° (4X/2)
+	float a = pow (sin ((phi_B-phi_A)/2), 2) +cos (phi_A) *cos (phi_B)*pow (sin ((lamda_B-lamda_B)/2),2); // Haversine formula: a = sin' (dp/2) + cos p1 O cos p2 D sinÂ° (4X/2)
 	double c = 2 * atan2(sqrt(a),sqrt(1-a));
 return EARTHRADIUS * c;
 }
@@ -46,7 +46,7 @@ void GPS_read () {
 	strcpy(GPS_string, ""); //Init GPS Array
 	do{
 		char GPS_counter =0; //using char not int to decrease memory used
-	recievedChar = UART0_getChar ();
+	recievedChar = UART0_GPS_read(); 
 	GPS_string [GPS_counter++] = recievedChar;
 	}while(recievedChar!='*');
 }
