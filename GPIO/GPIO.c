@@ -1,5 +1,6 @@
 #include "TM4C123.h"
 #include "GPIO.h"
+#include "TM4C123GH6PM.h"
 	//For Testing
 //void SystemInit(){};
 /*	 int main(){
@@ -52,12 +53,7 @@ void initPortD(){
   GPIO_PORTD_DEN_R = 0x0F;												//  enable digital I/O on PD3-0
 }	
 
-void initPortE(){ 
-	SET_BIT(SYSCTL_RCGCGPIO_R,5);         				//  activate clock for Port E
-  while ((SYSCTL_PRGPIO_R & (0x01 << 5)) == 0);		//  allow time for clock to start
-	SET_BIT(GPIO_PORTE_DIR_R,2);
-	SET_BIT(GPIO_PORTD_DEN_R,2);
-}
+
 
 void turn_led(int color){ 			//color = RED or YELLOW or GREEN
 	GPIO_PORTF_DATA_R &= ~0x0E; // Clear all Leds
