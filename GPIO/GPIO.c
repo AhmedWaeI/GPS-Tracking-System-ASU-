@@ -29,7 +29,7 @@
     }
     return 0;
 }*/
-
+// initialization of port F
 void initPortF(){
 	SET_BIT(SYSCTL_RCGCGPIO_R,5); 								// 	Activate clock for Porf F
 	while((SYSCTL_PRGPIO_R& (0x01 << 5)) == 0){} 	// Delay
