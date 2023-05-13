@@ -9,5 +9,5 @@
 void initPortF();
 void initPortD();
 void initPortE();
-void turn_led(int color); //color = RED or YELLOW or GREEN
+void turn_led(int color); //Color = RED or YELLOW or GREEN
 #endif
