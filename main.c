@@ -25,7 +25,7 @@ float  toDeg(float angle) {
 float  toRad(float angle) {
     return (angle * PI / 180);
 }
-//this function returns the distance between our current coordinations and the final coordinations
+//this function returns the distance between our current coordinations and the final coordination
 float  getDistance(int startLong, int startLat, int endLong, int endLat) {
     float lamda_A = toRad(toDeg(startLong));
     float phi_A = toRad(toDeg(startLat));
