@@ -1,2 +1,1 @@
-GPS Tracking system that uses GPS module to get the value of where we are and our destination and display distance to the destination on the LCD.
-When we reach the destination the we lighten the Green LED
+GPS Tracking system that uses GPS module to get the coordinations of where we are and our destination as long as we are far from the destination Red Led is ON and if we are within the perimeter it turns Yellowand once we arrive it turns Green
