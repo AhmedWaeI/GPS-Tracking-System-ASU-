@@ -16,7 +16,6 @@ float endLong = 30 ;
 float endLat=31;
 float displacement;
 
-//endLat= ...........;
 float  toDeg(float angle) {
     int degree = angle / 100;
     int minutes = angle - degree * 100;
@@ -26,7 +25,7 @@ float  toDeg(float angle) {
 float  toRad(float angle) {
     return (angle * PI / 180);
 }
-
+//this function returns the distance between our current coordinations and the final coordinations
 float  getDistance(int startLong, int startLat, int endLong, int endLat) {
     float lamda_A = toRad(toDeg(startLong));
     float phi_A = toRad(toDeg(startLat));
