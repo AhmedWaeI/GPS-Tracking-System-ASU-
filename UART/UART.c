@@ -17,8 +17,8 @@ void UART5_GPS_init() //should be called only once
 	UART5_CTL_R |= 0x301;//enable RXE ,TXE,and UART
 	GPIO_PORTE_AFSEL_R |= 0x30;
 	GPIO_PORTE_PCTL_R |=(GPIO_PORTE_PCTL_R & 0xFF00FFFF) + 0x00110000;
-	GPIO_PORTE_DEN_R |=0x30;//enable digital I/O on PAO,PA1
-	GPIO_PORTE_AMSEL_R=0x0;//disable analog function on PAO,PA1
+	GPIO_PORTE_DEN_R |=0x30;
+	GPIO_PORTE_AMSEL_R=0x0;
 }
 char UART5_GPS_read()
 {
