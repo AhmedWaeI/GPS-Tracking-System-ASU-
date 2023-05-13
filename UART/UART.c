@@ -9,7 +9,7 @@ void UART5_GPS_init()
 	while((SYSCTL_RCGCGPIO_R & 0x10)==0);
 	while((SYSCTL_RCGCUART_R & 0x20)==0);
 	GPIO_PORTE_CR_R = 0x1F; 
-	//baudrate = 9600 
+	///////Baudrate = 9600 
 	UART5_IBRD_R= 104;
 	UART5_FBRD_R= 11;
 	UART5_LCRH_R=0x00000070;
