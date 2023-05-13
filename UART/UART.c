@@ -2,22 +2,23 @@
 #include "UART.h"
 
 //intialization of UART5
-void UART5_GPS_init()
+void UART5_GPS_init() //should be called only once
 {
-	SYSCTL_RCGCUART_R |= 0x20;
+	SYSCTL_RCGCUART_R |= 0x20;// ACTIVATE UART5
 	SYSCTL_RCGCGPIO_R |= 0x10;
 	while((SYSCTL_RCGCGPIO_R & 0x10)==0);
 	while((SYSCTL_RCGCUART_R & 0x20)==0);
-	GPIO_PORTE_CR_R = 0x1F; 
+	GPIO_PORTE_CR_R = 0x1F; // allow changes
 	///////Baudrate = 9600 
+	// to calculate 
 	UART5_IBRD_R= 104;
 	UART5_FBRD_R= 11;
-	UART5_LCRH_R=0x00000070;
-	UART5_CTL_R |= 0x301;
+	UART5_LCRH_R=0x00000070;//8-bit word length, enable FIFO 
+	UART5_CTL_R |= 0x301;//enable RXE ,TXE,and UART
 	GPIO_PORTE_AFSEL_R |= 0x30;
 	GPIO_PORTE_PCTL_R |=(GPIO_PORTE_PCTL_R & 0xFF00FFFF) + 0x00110000;
-	GPIO_PORTE_DEN_R |=0x30;
-	GPIO_PORTE_AMSEL_R=0x0;
+	GPIO_PORTE_DEN_R |=0x30;//enable digital I/O on PAO,PA1
+	GPIO_PORTE_AMSEL_R=0x0;//disable analog function on PAO,PA1
 }
 char UART5_GPS_read()
 {
