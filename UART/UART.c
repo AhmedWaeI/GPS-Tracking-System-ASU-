@@ -1,7 +1,7 @@
 #include "TM4C123GH6pm.h"
 #include "UART.h"
 
-
+//intialization of UART5
 void UART5_GPS_init()
 {
 	SYSCTL_RCGCUART_R |= 0x20;
