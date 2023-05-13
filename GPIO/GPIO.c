@@ -55,7 +55,7 @@ void initPortD(){
 
 
 
-void turn_led(int color){ 			//color = RED or YELLOW or GREEN
+void turn_led(int color){ 			//color = RED or YELLOW or GREEN, thier values are in the header file
 	GPIO_PORTF_DATA_R &= ~0x0E; // Clear all Leds
 	GPIO_PORTF_DATA_R |= color; // Set color
 }
